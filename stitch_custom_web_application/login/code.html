@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Member Login - PRIME</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#001e2d",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-secondary-fixed": "#410005",
+                        "tertiary-fixed": "#c6e7ff",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#82cfff",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#000000",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "outline": "#7e7576",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-container": "#008dc2",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "surface": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#bb0022",
+                        "on-secondary-fixed-variant": "#930018",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-container": "#e9002d",
+                        "tertiary-container": "#001e2d",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#004c6b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Anton"],
+                        "label-bold": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Anton"],
+                        "title-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .sharp-border {
+            border-radius: 0px !important;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-lg antialiased overflow-x-hidden flex flex-col min-h-screen">
+    <!-- TopNavBar -->
+    <header class="bg-surface dark:bg-surface border-b border-primary dark:border-primary-fixed sticky top-0 z-50 w-full h-20">
+        <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto">
+            <!-- Left Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-6">
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="../shop_all_prime_hydration/code.html">SHOP</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="../about_prime_our_story/code.html">ABOUT PRIME</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="#">WHERE TO BUY</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="#">VERIFY YOUR PRIME</a>
+            </nav>
+            <!-- Brand Logo -->
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a class="font-display-lg text-display-lg tracking-tighter text-primary dark:text-primary-fixed" href="../prime_hydration_official_site/code.html">PRIME</a>
+            </div>
+            <!-- Right Actions -->
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex gap-4 font-label-bold text-label-bold border border-primary px-2 py-1">
+                    <button class="hover:underline font-bold">US</button>
+                    <span>|</span>
+                    <button class="text-outline font-normal">UK</button>
+                </div>
+                <button class="text-primary hover:text-primary-fixed transition-colors duration-100" aria-label="Search">
+                    <span class="material-symbols-outlined" data-icon="search">search</span>
+                </button>
+                <button class="text-primary hover:text-primary-fixed transition-colors duration-100" aria-label="Cart">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+                <button class="hidden lg:block bg-primary text-on-primary font-label-bold text-label-bold px-8 py-3 hover:bg-surface-tint transition-colors duration-100">BUY PRIME</button>
+                <button class="lg:hidden text-primary" aria-label="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Split Layout -->
+    <main class="flex-grow grid grid-cols-1 lg:grid-cols-12 max-w-[1440px] w-full mx-auto">
+        <!-- Left Banner: High-contrast athletic background -->
+        <section class="hidden lg:block lg:col-span-6 relative bg-primary overflow-hidden h-full min-h-[600px]">
+            <img alt="High-contrast athletic silhouette" class="absolute inset-0 w-full h-full object-cover grayscale opacity-50 mix-blend-luminosity" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&amp;w=2070&amp;auto=format&amp;fit=crop"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent flex flex-col justify-end p-12">
+                <h1 class="font-display-xl text-[72px] text-white uppercase leading-none tracking-tighter mb-4">
+                    FUEL YOUR <br/><span class="text-secondary">LIMITLESS</span>
+                </h1>
+                <p class="font-body-lg text-white/80 max-w-md">
+                    Become a PRIME member. Unlock early access to flavor drops, limited-edition gear, and special subscription rates.
+                </p>
+            </div>
+        </section>
+
+        <!-- Right Side: Forms Container -->
+        <section class="col-span-1 lg:col-span-6 flex flex-col justify-center px-6 py-12 md:px-16 bg-white">
+            <div class="w-full max-w-[450px] mx-auto flex flex-col gap-8">
+                <!-- Tabs Indicator -->
+                <div class="flex border-b-2 border-black">
+                    <button id="tab-login" class="flex-1 pb-4 text-center font-headline-lg text-title-md text-black uppercase border-b-4 border-black transition-all">
+                        LOGIN
+                    </button>
+                    <button id="tab-register" class="flex-1 pb-4 text-center font-headline-lg text-title-md text-on-surface-variant hover:text-black uppercase border-b-4 border-transparent transition-all">
+                        SIGN UP
+                    </button>
+                </div>
+
+                <!-- Forms Area -->
+                <div class="flex flex-col gap-6">
+                    <!-- 1. Login Form -->
+                    <form id="login-form" class="flex flex-col gap-5">
+                        <div class="flex flex-col gap-1">
+                            <label class="text-xs uppercase font-bold text-black" for="login-email">Email Address</label>
+                            <input class="border-2 border-black focus:border-secondary focus:ring-0 h-12 px-4 text-black font-label-bold sharp-border text-sm" id="login-email" type="email" placeholder="Enter your email" required />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="text-xs uppercase font-bold text-black" for="login-password">Password</label>
+                            <input class="border-2 border-black focus:border-secondary focus:ring-0 h-12 px-4 text-black font-label-bold sharp-border text-sm" id="login-password" type="password" placeholder="••••••••" required />
+                        </div>
+                        <div class="flex justify-between items-center text-xs font-label-bold uppercase">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="border border-black text-black focus:ring-0 sharp-border h-4 w-4" />
+                                <span>Remember Me</span>
+                            </label>
+                            <a href="#" class="hover:text-secondary hover:underline">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="w-full bg-black text-white hover:bg-secondary h-14 font-headline-lg text-title-md uppercase transition-colors sharp-border">
+                            LOG IN
+                        </button>
+                    </form>
+
+                    <!-- 2. Registration Form (Hidden by default) -->
+                    <form id="register-form" class="flex flex-col gap-5 hidden">
+                        <div class="flex flex-col gap-1">
+                            <label class="text-xs uppercase font-bold text-black" for="reg-name">Full Name</label>
+                            <input class="border-2 border-black focus:border-secondary focus:ring-0 h-12 px-4 text-black font-label-bold sharp-border text-sm" id="reg-name" type="text" placeholder="e.g. Jane D." required />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="text-xs uppercase font-bold text-black" for="reg-email">Email Address</label>
+                            <input class="border-2 border-black focus:border-secondary focus:ring-0 h-12 px-4 text-black font-label-bold sharp-border text-sm" id="reg-email" type="email" placeholder="Enter your email" required />
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label class="text-xs uppercase font-bold text-black" for="reg-password">Password</label>
+                            <input class="border-2 border-black focus:border-secondary focus:ring-0 h-12 px-4 text-black font-label-bold sharp-border text-sm" id="reg-password" type="password" placeholder="••••••••" required />
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-label-bold uppercase cursor-pointer">
+                            <input type="checkbox" class="border border-black text-black focus:ring-0 sharp-border h-4 w-4" required />
+                            <span>I agree to Terms &amp; Conditions</span>
+                        </div>
+                        <button type="submit" class="w-full bg-black text-white hover:bg-secondary h-14 font-headline-lg text-title-md uppercase transition-colors sharp-border">
+                            CREATE ACCOUNT
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4 py-2">
+                    <div class="flex-grow h-[1px] bg-black/10"></div>
+                    <span class="text-[10px] font-label-bold text-on-surface-variant uppercase">OR CONTINUE WITH</span>
+                    <div class="flex-grow h-[1px] bg-black/10"></div>
+                </div>
+
+                <!-- Social Logins -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="border-2 border-black hover:bg-black/5 h-12 flex items-center justify-center gap-2 font-label-bold text-xs uppercase sharp-border" id="social-google">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24">
+                            <path fill="#000" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.72 5.72 0 018.27 12.8a5.72 5.72 0 015.72-5.719c2.316 0 4.148.887 5.176 1.884l3.18-3.185C20.34 3.84 17.48 2.28 13.99 2.28a9.72 9.72 0 00-9.71 9.71 9.72 9.72 0 009.71 9.73c5.388 0 9.722-3.899 9.722-9.73 0-.648-.057-1.143-.171-1.705H12.24z"/>
+                        </svg>
+                        Google
+                    </button>
+                    <button class="border-2 border-black hover:bg-black/5 h-12 flex items-center justify-center gap-2 font-label-bold text-xs uppercase sharp-border" id="social-apple">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="#000">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.66-.81 1.11-1.93.99-3.06-1 .04-2.2.67-2.92 1.49-.64.73-1.2 1.87-1.05 2.97 1.11.09 2.24-.55 2.98-1.4"/>
+                        </svg>
+                        Apple
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-primary dark:border-primary-fixed w-full mt-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+            <!-- Brand / Legal -->
+            <div class="md:col-span-4 flex flex-col justify-between gap-8">
+                <span class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tighter leading-none">PRIME</span>
+                <p class="font-label-bold text-label-bold text-on-surface-variant uppercase">
+                    © 2024 PRIME HYDRATION, LLC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+            <!-- Links -->
+            <div class="md:col-span-8 flex flex-wrap justify-end gap-x-12 gap-y-6 items-end">
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100" href="#">PRIVACY POLICY</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100" href="#">TERMS OF SERVICE</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100" href="#">CONTACT US</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100" href="#">NEWSLETTER</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../node_modules/@supabase/supabase-js/dist/umd/supabase.js"></script>
+    <script src="../supabaseClient.js?v=1.0.1"></script>
+    <script src="../cart.js?v=1.0.1"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLogin = document.getElementById('tab-login');
+            const tabRegister = document.getElementById('tab-register');
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+
+            // Tabs toggles
+            tabLogin.addEventListener('click', () => {
+                tabLogin.classList.remove('border-transparent', 'text-on-surface-variant');
+                tabLogin.classList.add('border-black', 'text-black');
+                tabRegister.classList.add('border-transparent', 'text-on-surface-variant');
+                tabRegister.classList.remove('border-black', 'text-black');
+                
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+            });
+
+            tabRegister.addEventListener('click', () => {
+                tabRegister.classList.remove('border-transparent', 'text-on-surface-variant');
+                tabRegister.classList.add('border-black', 'text-black');
+                tabLogin.classList.add('border-transparent', 'text-on-surface-variant');
+                tabLogin.classList.remove('border-black', 'text-black');
+                
+                registerForm.classList.remove('hidden');
+                loginForm.classList.add('hidden');
+            });
+
+            // Handle Login Form Submit
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value;
+
+                try {
+                    const submitBtn = loginForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'AUTHENTICATING...';
+
+                    // Verify if Supabase client is initialized.
+                    const client = await getSupabaseClient();
+                    if (!client) {
+                        throw new Error('Supabase configuration is missing or incorrect. Please check your .env file.');
+                    }
+
+                    // Attempt real authentication via Supabase since client is active
+                    const loginData = await supabaseLogin(email, password);
+                    console.log('Supabase user logged in successfully:', loginData);
+
+                    const mockUser = {
+                        name: loginData.user.email.split('@')[0].toUpperCase(),
+                        email: loginData.user.email,
+                        joined: new Date(loginData.user.created_at).toLocaleDateString('en-US', { month: '2-digit', year: 'numeric' })
+                    };
+
+                    localStorage.setItem('prime_user', JSON.stringify(mockUser));
+                    
+                    if (typeof window.showToast === 'function') {
+                        window.showToast('LOGGED IN SUCCESSFULLY!');
+                    } else {
+                        alert('LOGGED IN SUCCESSFULLY!');
+                    }
+
+                    setTimeout(() => {
+                        window.location.href = '../prime_hydration_official_site/code.html';
+                    }, 1000);
+
+                } catch (err) {
+                    console.error('Supabase authentication error:', err);
+                    
+                    const errorMsg = err.message ? err.message.toUpperCase() : 'INVALID LOGIN CREDENTIALS';
+                    if (typeof window.showToast === 'function') {
+                        window.showToast(`AUTH ERROR: ${errorMsg}`);
+                    } else {
+                        alert(`AUTH ERROR: ${errorMsg}`);
+                    }
+                } finally {
+                    const submitBtn = loginForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'LOG IN';
+                }
+            });
+
+            // Handle Register Form Submit
+            registerForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('reg-name').value.trim();
+                const email = document.getElementById('reg-email').value.trim();
+                const password = document.getElementById('reg-password').value;
+
+                try {
+                    const submitBtn = registerForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'CREATING ACCOUNT...';
+
+                    // Verify if Supabase client is initialized.
+                    const client = await getSupabaseClient();
+                    if (!client) {
+                        throw new Error('Supabase configuration is missing or incorrect. Please check your .env file.');
+                    }
+
+                    // Call the supabaseRegister helper since Supabase is configured
+                    const registerData = await supabaseRegister(email, password, name);
+                    console.log('Supabase user registered successfully:', registerData);
+
+                    if (registerData.session) {
+                        const loggedUser = {
+                            name: name.toUpperCase(),
+                            email: email,
+                            joined: new Date().toLocaleDateString('en-US', { month: '2-digit', year: 'numeric' })
+                        };
+                        localStorage.setItem('prime_user', JSON.stringify(loggedUser));
+                        
+                        if (typeof window.showToast === 'function') {
+                            window.showToast('ACCOUNT CREATED & LOGGED IN SUCCESSFULLY!');
+                        } else {
+                            alert('ACCOUNT CREATED & LOGGED IN SUCCESSFULLY!');
+                        }
+
+                        setTimeout(() => {
+                            window.location.href = '../prime_hydration_official_site/code.html';
+                        }, 1000);
+                    } else if (registerData.user) {
+                        if (typeof window.showToast === 'function') {
+                            window.showToast('ACCOUNT CREATED! PLEASE LOG IN.');
+                        } else {
+                            alert('ACCOUNT CREATED! PLEASE LOG IN.');
+                        }
+                        setTimeout(() => {
+                            tabLogin.click();
+                        }, 2000);
+                    } else {
+                        throw new Error('Registration succeeded but no user details returned.');
+                    }
+
+                } catch (err) {
+                    console.error('Supabase registration error:', err);
+                    
+                    const errorMsg = err.message ? err.message.toUpperCase() : 'REGISTRATION FAILED';
+                    if (typeof window.showToast === 'function') {
+                        window.showToast(`SIGNUP ERROR: ${errorMsg}`);
+                    } else {
+                        alert(`SIGNUP ERROR: ${errorMsg}`);
+                    }
+                } finally {
+                    const submitBtn = registerForm.querySelector('button[type="submit"]');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'CREATE ACCOUNT';
+                }
+            });
+
+            // Social Buttons click triggers
+            const googleBtn = document.getElementById('social-google');
+            if (googleBtn) {
+                googleBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    try {
+                        const client = await getSupabaseClient();
+                        if (!client) {
+                            throw new Error('Supabase client is not initialized. Please check your .env file.');
+                        }
+                        
+                        googleBtn.disabled = true;
+                        googleBtn.innerHTML = 'Connecting...';
+
+                        const { data, error } = await client.auth.signInWithOAuth({
+                            provider: 'google',
+                            options: {
+                                redirectTo: window.location.origin + '/prime_hydration_official_site/code.html'
+                            }
+                        });
+
+                        if (error) throw error;
+
+                    } catch (err) {
+                        console.error('Google OAuth error:', err);
+                        const errorMsg = err.message ? err.message.toUpperCase() : 'GOOGLE LOGIN FAILED';
+                        if (typeof window.showToast === 'function') {
+                            window.showToast(`GOOGLE AUTH ERROR: ${errorMsg}`);
+                        } else {
+                            alert(`GOOGLE AUTH ERROR: ${errorMsg}`);
+                        }
+                        googleBtn.disabled = false;
+                        googleBtn.innerHTML = `
+                            <svg class="h-4 w-4" viewBox="0 0 24 24">
+                                <path fill="#000" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.114-5.136 4.114A5.72 5.72 0 018.27 12.8a5.72 5.72 0 015.72-5.719c2.316 0 4.148.887 5.176 1.884l3.18-3.185C20.34 3.84 17.48 2.28 13.99 2.28a9.72 9.72 0 00-9.71 9.71 9.72 0 009.71 9.73c5.388 0 9.722-3.899 9.722-9.73 0-.648-.057-1.143-.171-1.705H12.24z"/>
+                            </svg>
+                            Google
+                        `;
+                    }
+                });
+            }
+
+            const appleBtn = document.getElementById('social-apple');
+            if (appleBtn) {
+                appleBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (typeof window.showToast === 'function') {
+                        window.showToast('APPLE SIGN IN IS NOT CONFIGURED');
+                    } else {
+                        alert('APPLE SIGN IN IS NOT CONFIGURED');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

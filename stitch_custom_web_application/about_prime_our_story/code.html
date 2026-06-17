@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About PRIME Hydration</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&family=Archivo+Narrow:wght@100..900&display=swap"
+        rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: #f9f9f9;
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#001e2d",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-secondary-fixed": "#410005",
+                        "tertiary-fixed": "#c6e7ff",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#82cfff",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#000000",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "outline": "#7e7576",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-container": "#008dc2",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "surface": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#bb0022",
+                        "on-secondary-fixed-variant": "#930018",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-container": "#e9002d",
+                        "tertiary-container": "#001e2d",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#004c6b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Anton"],
+                        "label-bold": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Anton"],
+                        "title-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-on-background font-body-lg antialiased overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header
+        class="bg-surface dark:bg-surface border-b border-primary dark:border-primary-fixed fixed w-full top-0 z-50">
+        <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto">
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex gap-gutter items-center">
+                <a class="font-label-bold text-label-bold text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed uppercase tracking-wider"
+                    href="../shop_all_prime_hydration/code.html">SHOP</a>
+                <a class="font-label-bold text-label-bold text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 uppercase tracking-wider"
+                    href="../about_prime_our_story/code.html">ABOUT PRIME</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed uppercase tracking-wider"
+                    href="#">WHERE TO BUY</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed uppercase tracking-wider"
+                    href="#">VERIFY YOUR PRIME</a>
+            </nav>
+            <!-- Brand Logo -->
+            <a class="font-display-lg text-display-lg tracking-tighter text-primary dark:text-primary-fixed absolute left-1/2 transform -translate-x-1/2"
+                href="../prime_hydration_official_site/code.html">
+                PRIME
+            </a>
+            <!-- Right Actions -->
+            <div class="flex items-center gap-gutter">
+                <div class="hidden md:flex items-center gap-2 font-label-bold text-label-bold">
+                    <button
+                        class="border border-primary px-3 py-1 hover:bg-primary hover:text-on-primary transition-colors duration-100">US</button>
+                    <button
+                        class="text-on-surface-variant hover:text-primary transition-colors duration-100">UK</button>
+                </div>
+                <button aria-label="Search" class="text-primary hover:text-primary transition-colors duration-100">
+                    <span class="material-symbols-outlined" data-icon="search">search</span>
+                </button>
+                <button class="profile-toggle-btn text-primary hover:text-primary transition-colors duration-100"
+                    aria-label="Profile">
+                    <span class="material-symbols-outlined" data-icon="person">person</span>
+                </button>
+                <button class="text-primary hover:text-primary-fixed transition-colors duration-100" aria-label="Cart">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+                <a class="hidden md:inline-block bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider hover:bg-secondary transition-colors duration-100"
+                    href="#">
+                    BUY PRIME
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button aria-label="Menu" class="md:hidden text-primary">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Canvas -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[819px] flex items-center justify-center overflow-hidden bg-surface-container-highest">
+            <div class="absolute inset-0 z-0 opacity-40 mix-blend-multiply">
+                <img alt="High-contrast athletic lifestyle image featuring an individual in motion, capturing the intense, energetic spirit of an active lifestyle. The lighting is dramatic, emphasizing dynamic movement against an urban, minimalist concrete background. The overarching aesthetic is modern, raw, and performance-driven, aligned with the brand's bold identity."
+                    class="w-full h-full object-cover grayscale"
+                    data-alt="High-contrast athletic lifestyle image featuring an individual in motion, capturing the intense, energetic spirit of an active lifestyle. The lighting is dramatic, emphasizing dynamic movement against an urban, minimalist concrete background. The overarching aesthetic is modern, raw, and performance-driven, aligned with the brand's bold identity."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw5nGJ5aCdnSi-TjMhOW3qYO8hvfyxub2gmA0Yrtk0ygXdtj8m8F_JRde9GW5sXzej42zipOop0NmrsIELQpdnwoT3p19PKXC6zj4KWlTDbKFm5YWXJYR_j5g4-P3V5paG_VdyT7BH2FjIjrTawNQIgHVj3o_nt1WV-rhEyR99nfBY0LqF0fXJFxv-Da_BsmXHFxtOPWsr71JM80cwCbUovfEYW8UxZoQVIxM3druR1gbd4i0zk_Fxf6N7vL2Up6OnhigBrD5vueSl" />
+            </div>
+            <div
+                class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto flex flex-col items-center">
+                <h1
+                    class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary uppercase tracking-tighter mb-stack-lg animate-fade-in-up">
+                    THE STORY OF <br /><span class="text-secondary">PRIME</span>
+                </h1>
+                <p
+                    class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg border-l-4 border-primary pl-4 text-left">
+                    Founded by Logan Paul and KSI, PRIME was born out of a desire to create a fantastic hydration drink
+                    that can fuel any lifestyle. It’s about building a community of people who push boundaries.
+                </p>
+                <a class="bg-primary text-on-primary font-label-bold text-label-bold px-8 py-4 uppercase tracking-wider hover:bg-on-surface-variant transition-colors duration-100 inline-flex items-center gap-2"
+                    href="#founders">
+                    MEET THE FOUNDERS
+                    <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+                </a>
+            </div>
+        </section>
+        <!-- The Founders Section (Asymmetric Layout) -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto" id="founders">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+                <div class="md:col-span-5 md:col-start-1 flex flex-col gap-stack-lg order-2 md:order-1">
+                    <h2
+                        class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase leading-none">
+                        RIVALS TURNED <br /> VISIONARIES
+                    </h2>
+                    <div class="h-1 w-24 bg-primary"></div>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        What started as one of the biggest rivalries in internet history evolved into a massive business
+                        partnership. Logan Paul and KSI realized that together, they could create something better than
+                        what was currently on the market.
+                    </p>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">
+                        Their goal was simple: bridge the gap between great taste and functional benefits. They spent
+                        months formulating, tasting, and refining to create a product they genuinely loved and used
+                        daily.
+                    </p>
+                </div>
+                <div class="md:col-span-6 md:col-start-7 relative order-1 md:order-2">
+                    <!-- Glassmorphism overlapping images -->
+                    <div class="relative h-[500px] w-full">
+                        <img alt="Portrait of two intense, athletic figures standing back-to-back in a dimly lit, industrial studio environment. The lighting is sharp and high-contrast, casting deep shadows that highlight their muscular physiques and determined expressions. The mood is powerful and competitive, reflecting a premium, high-energy brand aesthetic with a strictly black, white, and subtle neon color palette."
+                            class="absolute top-0 right-0 w-3/4 h-[400px] object-cover border-2 border-primary grayscale hover:grayscale-0 transition-all duration-500 z-10 shadow-2xl"
+                            data-alt="Portrait of two intense, athletic figures standing back-to-back in a dimly lit, industrial studio environment. The lighting is sharp and high-contrast, casting deep shadows that highlight their muscular physiques and determined expressions. The mood is powerful and competitive, reflecting a premium, high-energy brand aesthetic with a strictly black, white, and subtle neon color palette."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbfie7atJ52fHECGOq3ai-qCLHZewsIhVTt3FhkO5Gv22T_b45fEGQ32xpxzlMrBUr9qwuGibMTopFM-6YgjM49HnOXYweVj4m_HQGFDdhElcjakNsd7mtF2Izk4feloqV5pgO4aJT6qFTZVH4G31Hkn93UXyr6Mvh6YZD5hvHmGtLDg6aBuCRtQps4ripB7yNW-Cxk2bv1FPwN7VpRcLCFEhbv4A7KXknGf75nRQKMAl--ZJyHh2nMNHVJOQ0N79AXb7OrrO2uKFW" />
+                        <div
+                            class="absolute bottom-0 left-0 w-2/3 p-6 bg-surface-container/90 backdrop-blur-md border border-primary z-20">
+                            <h3 class="font-title-md text-title-md text-primary uppercase mb-2">The Mission</h3>
+                            <p class="font-label-bold text-label-bold text-on-surface-variant">To fill the void where
+                                great taste meets function.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Core Values / Bento Grid -->
+        <section class="bg-surface-container py-section-gap px-margin-mobile md:px-margin-desktop">
+            <div class="max-w-[1440px] mx-auto">
+                <h2
+                    class="font-display-lg text-headline-lg-mobile md:text-display-lg text-center text-primary uppercase mb-16">
+                    THE PRIME <span class="text-secondary">STANDARD</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[300px]">
+                    <!-- Value 1 -->
+                    <div
+                        class="bg-surface border border-outline-variant p-8 flex flex-col justify-between group hover:border-primary transition-colors duration-300">
+                        <div class="flex justify-between items-start">
+                            <span class="material-symbols-outlined text-[48px] text-primary"
+                                data-icon="water_drop">water_drop</span>
+                            <span
+                                class="font-display-lg text-display-lg text-surface-dim opacity-50 leading-none">01</span>
+                        </div>
+                        <div>
+                            <h3
+                                class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mb-2">
+                                HYDRATION</h3>
+                            <p class="font-label-bold text-label-bold text-on-surface-variant">Formulated with 10%
+                                coconut water for optimal hydration and recovery.</p>
+                        </div>
+                    </div>
+                    <!-- Value 2 -->
+                    <div
+                        class="bg-primary text-on-primary p-8 flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550005809-91ad75fb315f?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center opacity-20 mix-blend-luminosity group-hover:opacity-40 transition-opacity duration-500"
+                            data-alt="Abstract, high-energy texture featuring dynamic splashes of liquid frozen in mid-air against a dark background. The scene is illuminated with stark, high-contrast lighting, emphasizing the chaotic yet beautiful movement of the fluid. The overall mood is intense, refreshing, and heavily stylized to match a premium athletic performance aesthetic.">
+                        </div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span class="material-symbols-outlined text-[48px] text-on-primary"
+                                data-icon="bolt">bolt</span>
+                            <span
+                                class="font-display-lg text-display-lg text-surface-tint opacity-30 leading-none">02</span>
+                        </div>
+                        <div class="relative z-10">
+                            <h3
+                                class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-primary uppercase mb-2">
+                                ENERGY</h3>
+                            <p class="font-label-bold text-label-bold text-on-primary-fixed-variant">B-Vitamins and
+                                antioxidants to push you further, harder, faster.</p>
+                        </div>
+                    </div>
+                    <!-- Value 3 -->
+                    <div
+                        class="bg-surface border border-outline-variant p-8 flex flex-col justify-between group hover:border-primary transition-colors duration-300 md:row-span-2">
+                        <img alt="Close-up of a muscular arm gripping a sleek, modern sports bottle in a high-end gym setting. The lighting is dramatic, highlighting the sweat and definition of the athlete's arm. The color palette is strictly monochrome with a single vibrant red accent on the bottle, reinforcing the brand's premium, high-intensity visual narrative."
+                            class="w-full h-48 object-cover mb-4 grayscale"
+                            data-alt="Close-up of a muscular arm gripping a sleek, modern sports bottle in a high-end gym setting. The lighting is dramatic, highlighting the sweat and definition of the athlete's arm. The color palette is strictly monochrome with a single vibrant red accent on the bottle, reinforcing the brand's premium, high-intensity visual narrative."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlPug5UZAPpRfsS5dlJqZ_D60utAmYqXEsr36VFMfNop7zoizGeJ1qLNG26QCZT0dSWEbkU86kl4iuGO4fp3WEiKTOmDcD1KPgOliYeFrOzkQy51kU-ee0PgpCQYapR7XomXZRlrbITCKlBeSNv3k8QbKS1F0-qGqwJTf1laxHs3sFq9umVYP-Bw_tfkf5Ryf25cd1iQKjSjKDsnpzFcnp9eepU-4RElEibMQ2USpg2CQvA9M4P2AXzZPk3BfL8_aZOxvzoQsTqTPx" />
+                        <div>
+                            <div class="flex justify-between items-start mb-4">
+                                <span class="material-symbols-outlined text-[48px] text-primary"
+                                    data-icon="fitness_center">fitness_center</span>
+                                <span
+                                    class="font-display-lg text-display-lg text-surface-dim opacity-50 leading-none">03</span>
+                            </div>
+                            <h3
+                                class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase mb-2">
+                                LIFESTYLE</h3>
+                            <p class="font-label-bold text-label-bold text-on-surface-variant">Built for the relentless.
+                                Whether you're in the gym, on the field, or grinding at work.</p>
+                        </div>
+                    </div>
+                    <!-- Value 4 -->
+                    <div class="bg-secondary text-on-secondary p-8 flex flex-col justify-between md:col-span-2 group">
+                        <div class="flex justify-between items-start">
+                            <span class="material-symbols-outlined text-[48px] text-on-secondary"
+                                data-icon="public">public</span>
+                            <span
+                                class="font-display-lg text-display-lg text-secondary-fixed-dim opacity-30 leading-none">04</span>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6 items-end">
+                            <div class="flex-1">
+                                <h3
+                                    class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-secondary uppercase mb-2">
+                                    COMMUNITY</h3>
+                                <p class="font-label-bold text-label-bold text-on-secondary-container">A global movement
+                                    of individuals striving for greatness. We are more than a drink.</p>
+                            </div>
+                            <a class="border-2 border-on-secondary px-6 py-2 font-label-bold text-label-bold uppercase tracking-wider hover:bg-on-secondary hover:text-secondary transition-colors duration-100 whitespace-nowrap"
+                                href="#">
+                                JOIN THE MOVEMENT
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section
+            class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto text-center border-b-2 border-primary">
+            <h2
+                class="font-display-xl text-headline-lg-mobile md:text-display-xl text-primary uppercase tracking-tighter mb-8">
+                READY TO HYDRATE?
+            </h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-12">
+                Find PRIME near you and experience the difference. Available in select retailers worldwide.
+            </p>
+            <a class="inline-block bg-primary text-on-primary font-headline-lg text-title-md md:text-headline-lg px-12 py-6 uppercase tracking-wider hover:bg-secondary transition-all duration-100 transform hover:scale-105"
+                href="#">
+                FIND A STORE
+            </a>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-primary dark:border-primary-fixed w-full bottom-0">
+        <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+            <!-- Brand / Legal -->
+            <div class="md:col-span-4 flex flex-col justify-between gap-8">
+                <span
+                    class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tighter leading-none">PRIME</span>
+                <p class="font-label-bold text-label-bold text-on-surface-variant uppercase">
+                    © 2024 PRIME HYDRATION, LLC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+            <!-- Links -->
+            <div class="md:col-span-8 flex flex-wrap justify-end gap-x-12 gap-y-6 items-end">
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100"
+                    href="#">PRIVACY POLICY</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100"
+                    href="#">TERMS OF SERVICE</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100"
+                    href="#">CONTACT US</a>
+                <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 uppercase tracking-wider transition-colors duration-100"
+                    href="#">NEWSLETTER</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../cart.js?v=1.0.1"></script>
+</body>
+
+</html>

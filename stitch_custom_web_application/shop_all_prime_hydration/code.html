@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHOP - PRIME</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#001e2d",
+                      "secondary-fixed-dim": "#ffb3af",
+                      "on-secondary-container": "#fffbff",
+                      "surface-container": "#eeeeee",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "outline-variant": "#cfc4c5",
+                      "inverse-primary": "#c6c6c6",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-secondary-fixed": "#410005",
+                      "tertiary-fixed": "#c6e7ff",
+                      "on-primary-fixed-variant": "#474747",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-primary-container": "#848484",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface-tint": "#5e5e5e",
+                      "primary-fixed-dim": "#c6c6c6",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#82cfff",
+                      "on-surface": "#1a1c1c",
+                      "primary": "#000000",
+                      "surface-container-high": "#e8e8e8",
+                      "error-container": "#ffdad6",
+                      "outline": "#7e7576",
+                      "inverse-surface": "#2f3131",
+                      "on-tertiary-container": "#008dc2",
+                      "error": "#ba1a1a",
+                      "primary-container": "#1b1b1b",
+                      "on-tertiary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#ffdad7",
+                      "surface": "#f9f9f9",
+                      "on-background": "#1a1c1c",
+                      "secondary": "#bb0022",
+                      "on-secondary-fixed-variant": "#930018",
+                      "background": "#f9f9f9",
+                      "on-surface-variant": "#4c4546",
+                      "secondary-container": "#e9002d",
+                      "tertiary-container": "#001e2d",
+                      "surface-container-low": "#f3f3f4",
+                      "surface-dim": "#dadada",
+                      "tertiary": "#000000",
+                      "on-tertiary-fixed-variant": "#004c6b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-gap": "120px",
+                      "gutter": "24px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "stack-lg": "32px"
+              },
+              "fontFamily": {
+                      "display-xl": [
+                              "Anton"
+                      ],
+                      "label-bold": [
+                              "Archivo Narrow"
+                      ],
+                      "body-lg": [
+                              "Archivo Narrow"
+                      ],
+                      "headline-lg": [
+                              "Anton"
+                      ],
+                      "title-md": [
+                              "Archivo Narrow"
+                      ],
+                      "headline-lg-mobile": [
+                              "Anton"
+                      ],
+                      "display-lg": [
+                              "Anton"
+                      ]
+              },
+              "fontSize": {
+                      "display-xl": [
+                              "120px",
+                              {
+                                      "lineHeight": "110px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "title-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "80px",
+                              {
+                                      "lineHeight": "80px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface border-b border-primary w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto hidden md:flex">
+<nav class="flex items-center gap-gutter">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-bold text-label-bold transition-colors duration-100 hover:bg-primary hover:text-on-primary" href="../shop_all_prime_hydration/code.html">SHOP</a>
+<a class="text-on-surface-variant hover:text-primary font-label-bold text-label-bold transition-colors duration-100 hover:bg-primary hover:text-on-primary" href="../about_prime_our_story/code.html">ABOUT PRIME</a>
+<a class="text-on-surface-variant hover:text-primary font-label-bold text-label-bold transition-colors duration-100 hover:bg-primary hover:text-on-primary" href="#">WHERE TO BUY</a>
+<a class="text-on-surface-variant hover:text-primary font-label-bold text-label-bold transition-colors duration-100 hover:bg-primary hover:text-on-primary" href="#">VERIFY YOUR PRIME</a>
+</nav>
+<div class="absolute left-1/2 -translate-x-1/2">
+<a class="font-display-lg text-display-lg tracking-tighter text-primary" href="../prime_hydration_official_site/code.html">PRIME</a>
+</div>
+<div class="flex items-center gap-gutter">
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-100" aria-label="Search">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="profile-toggle-btn text-on-surface-variant hover:text-primary transition-colors duration-100" aria-label="Profile">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors duration-100" aria-label="Cart">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<div class="flex gap-4">
+<button class="border border-primary px-4 py-2 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100">US</button>
+<button class="border border-primary px-4 py-2 font-label-bold text-label-bold text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-100">UK</button>
+</div>
+<button class="bg-primary text-on-primary px-8 py-4 font-label-bold text-label-bold hover:bg-on-surface hover:text-surface transition-colors duration-100">BUY PRIME</button>
+</div>
+</div>
+<!-- Mobile Nav -->
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 md:hidden">
+<button class="text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="font-display-lg text-headline-lg-mobile tracking-tighter text-primary" href="../prime_hydration_official_site/code.html">PRIME</a>
+<button class="text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop md:px-margin-desktop px-margin-mobile py-section-gap">
+<div class="text-center mb-section-gap">
+<h1 class="font-display-xl text-display-xl md:text-[180px] md:leading-[160px] tracking-tighter text-primary uppercase">Hydration</h1>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<button class="border-2 border-primary bg-primary text-on-primary px-6 py-3 font-label-bold text-label-bold uppercase">All Products</button>
+<button class="border border-outline px-6 py-3 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-variant transition-colors uppercase">Hydration Drink</button>
+<button class="border border-outline px-6 py-3 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-variant transition-colors uppercase">Energy Drink</button>
+<button class="border border-outline px-6 py-3 font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-variant transition-colors uppercase">Variety Packs</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">Sort By:</span>
+<select class="border-b border-primary bg-transparent font-label-bold text-label-bold text-primary focus:ring-0 uppercase py-1">
+<option>Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-gutter gap-y-[80px]">
+<!-- Product Card 1 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A studio shot of a vibrant, sports hydration bottle with aggressive branding, set against a pristine, high-key white background. The lighting is crisp and modern, highlighting the condensation on the plastic bottle. The mood is high-energy and premium, reflecting an athletic lifestyle aesthetic." class="h-4/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A studio shot of a vibrant, sports hydration bottle with aggressive branding, set against a pristine, high-key white background. The lighting is crisp and modern, highlighting the condensation on the plastic bottle. The mood is high-energy and premium, reflecting an athletic lifestyle aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfOaksg_IB3DBHCrEpD6bHB36jG-BpalnQdjZT6QxgQeRpDDDwMC161aj-cINDWvZ50NtmMx8HCnT_6A7ucQOT_4ibQ8yNt7LNYr4VFdlJ50V3jYa8MuYoJ90Gcv6QKsoquh-WmaNS_n4tO4cBSGZSUc0yMlLGnSlpOeSPJQJ2H_h6LzGZ4g0uAbiLVZ_WRiHNjQRP4fntud8Ge8B257itwzhihGZbNSwnVk85uTjYNVMO5FJab7tQFDrT-j8aHXvMhNDvLtwAZj4i"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-bold text-[10px] tracking-widest uppercase">Best Seller</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Ice Pop</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$29.99 / 12 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+<!-- Product Card 2 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A sleek, minimalist sports drink bottle featuring bold, contrasting typography. The bottle is presented on a stark white surface with sharp, defined shadows indicating strong studio lighting. The overall aesthetic is clean, modern, and performance-oriented." class="h-4/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A sleek, minimalist sports drink bottle featuring bold, contrasting typography. The bottle is presented on a stark white surface with sharp, defined shadows indicating strong studio lighting. The overall aesthetic is clean, modern, and performance-oriented." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbtw8_1pjq8-0qbP2WLfDwKUksIenRbcXHTgm-MbOndOPPWWtv0pqRIAEjlsS7oXh1WdgcKlPHy7CgdKW8LQASc8nB6aidjjUOSvcTBDm8QritBfrXNEd8OJqvJ0AckSsAym0bppa7KtYeu2JS0Q4xGcePck7HduKXgy1sE_fUKO4WPu_6GVG62YV_TY1hbK_Odvqy9HmVjro_vAU0GPk-aHc2cc8BYnvsewW4hVkGTbXbcM75yicY3_ocsAP2FI3PwHySdoM7zl9v"/>
+<div class="absolute top-4 left-4 bg-secondary text-on-secondary px-3 py-1 font-label-bold text-[10px] tracking-widest uppercase">Zero Sugar</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Ice Pop (Zero)</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$29.99 / 12 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+<!-- Product Card 3 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A multipack of vibrantly colored hydration drinks shrink-wrapped together. Shot in a minimalist studio environment with high-contrast lighting that emphasizes the bold product branding and vibrant colors against a stark white backdrop." class="h-3/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A multipack of vibrantly colored hydration drinks shrink-wrapped together. Shot in a minimalist studio environment with high-contrast lighting that emphasizes the bold product branding and vibrant colors against a stark white backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2DBKYosiDg9O5YtHQEp8ThY_o_A1548E4RF_HlRVkTXFlVnRRLwy5LHjSBRn3-N7KGz-2jXEu_UCnAoQIGD6RGRrDc_3v02PvLPIcb6Y3p0B0ar64235aN4iNrzBLJ8rIhH9FPAszf1BTiBJk0UgDhKXHZk7eP-mgaMxLrfkyPutM1_D4MMOh8A0EZ_N5Tuo1o2o0oLrPCfUO838UKYdehQCUVWaLyXK-a4l88uwqAMKCrrp2t-sYks0npK3mVG7Sb_7W0pLcAK6W"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Mega Variety Pack</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$34.99 / 15 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+<!-- Product Card 4 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A single athletic hydration bottle with intense, dynamic styling, isolated on a bright, minimalist background. The lighting is crisp and the shadows are hard, creating a premium, high-impact visual style characteristic of modern sports brands." class="h-4/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A single athletic hydration bottle with intense, dynamic styling, isolated on a bright, minimalist background. The lighting is crisp and the shadows are hard, creating a premium, high-impact visual style characteristic of modern sports brands." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRebxP6ul2BBDo4aWs-dGu2DLyVQG4IERfUfFIgeiOyqA18WEwYlQvOQv_VEGhATgzA6MY9UywrTixWdzF-rsIgu_nTkcVcx6RXAqkjagCWBxgRJi_cilwG0EmoVBmBb4yetC7b4Jw92WpZBkVm6Q67HESkj2exp8pB4dRCL0WdDLLB3BlkTIbfhkxvOGDFKaimd31A7VO49IewwuwinpJH5sPQr59MOjKeod_v6zfDTTDESSQF5cWQk7AOau5U7WsVt-H5Pg7NbOX"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Strawberry Swirl</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$29.99 / 12 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+<!-- Product Card 5 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A stylized, high-contrast studio photograph of a sports hydration bottle. The bottle is sleek and colorful, standing out against an intensely bright, white, minimalist setting. The aesthetic implies peak performance and premium quality." class="h-4/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A stylized, high-contrast studio photograph of a sports hydration bottle. The bottle is sleek and colorful, standing out against an intensely bright, white, minimalist setting. The aesthetic implies peak performance and premium quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC280AE_OuM5ftTEiHZRw_covltCAbdr8wDM04xyYhnQVwn_3V9sub5jwptaMWzk0AqOjafsD9jzUyLzQjSv2EaE3ljUCC-OtAIWVzejkQBgoia0qphJYlXW3Ls9VfzAvMlFO4-zhXnCC8CHXOqvJguwL5wPlH0aYRSr-x9bhl_2MUq86Y3m23ncPAeWhFGhSqYZnPMlhonLUREpjKNY58VCakeML7D1WYai5vlfccPV9NjjGJghjBB7sI5XfTNnmMEDcSADXkNGD4F"/>
+<div class="absolute top-4 left-4 bg-tertiary text-on-tertiary px-3 py-1 font-label-bold text-[10px] tracking-widest uppercase">Limited Edition</div>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Frostbite Fusion</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$32.99 / 12 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+<!-- Product Card 6 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="relative w-full aspect-[3/4] mb-8 bg-surface-container-low flex items-center justify-center overflow-hidden">
+<img alt="A multipack of hydration beverages in clear plastic wrapping, presented in a clean, modern studio setting with high-key lighting. The bold typography and bright brand colors provide striking contrast against the pale background." class="h-3/5 object-contain transition-transform duration-500 group-hover:scale-110" data-alt="A multipack of hydration beverages in clear plastic wrapping, presented in a clean, modern studio setting with high-key lighting. The bold typography and bright brand colors provide striking contrast against the pale background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoZtH_se6eZuconFi8soaMEyhqSAdCLNuh4LIVVg4-Os-CtZ4Laz1w69PaDHfKjnS84PJuDBkgdT_cRUqy11_jNBqUCFa65Yu9Yg4OtoztcJNDuXRC6CAMBDDfwduwDtfqCeY3-wGd_GIM_6KuIFxAeujWDaaAM8ZdEdnj_JtVZpuT9uDej3CFn5N6_Ei9tvv19m-4U3iM0g21ZpGFnSAj7jSlZBVRate-EhYhpEYSY38wxBWhYDbpo1C6Z1oFf4BWDOxDRzorMZPD"/>
+</div>
+<h3 class="font-title-md text-title-md text-primary mb-2 uppercase tracking-wide">Citrus Tide Mix</h3>
+<p class="font-body-lg text-on-surface-variant mb-6">$34.99 / 15 Pack</p>
+<button class="border border-primary px-8 py-3 font-label-bold text-label-bold text-primary hover:bg-primary hover:text-on-primary transition-colors duration-100 w-full uppercase">Add to Cart</button>
+</div>
+</div>
+</main>
+<footer class="bg-surface-container-lowest border-t-2 border-primary mt-section-gap w-full">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop md:px-margin-desktop px-margin-mobile py-section-gap max-w-[1440px] mx-auto">
+<div class="md:col-span-4 flex flex-col gap-6">
+<span class="font-display-lg text-display-lg text-primary tracking-tighter">PRIME</span>
+<p class="font-body-lg text-body-lg text-on-surface-variant">© 2024 PRIME HYDRATION, LLC. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="md:col-span-8 flex flex-col md:flex-row justify-end gap-12 md:gap-24">
+<div class="flex flex-col gap-4">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all" href="#">PRIVACY POLICY</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all" href="#">TERMS OF SERVICE</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all" href="#">CONTACT US</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary hover:underline decoration-2 underline-offset-4 transition-all" href="#">NEWSLETTER</a>
+</div>
+</div>
+</div>
+</footer>
+<script src="../cart.js?v=1.0.1"></script>
+</body></html>

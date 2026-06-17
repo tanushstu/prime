@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PRIME - Ice Pop Hydration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#001e2d",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-secondary-fixed": "#410005",
+                        "tertiary-fixed": "#c6e7ff",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#82cfff",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#000000",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "outline": "#7e7576",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-container": "#008dc2",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "surface": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#bb0022",
+                        "on-secondary-fixed-variant": "#930018",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-container": "#e9002d",
+                        "tertiary-container": "#001e2d",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#004c6b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Anton"],
+                        "label-bold": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Anton"],
+                        "title-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .material-symbols-outlined.filled {
+                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-lg min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface sticky top-0 z-50 w-full border-b border-primary dark:border-primary-fixed">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto hidden md:flex">
+<!-- Left Navigation -->
+<nav class="flex items-center gap-gutter">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-bold text-label-bold uppercase" href="../shop_all_prime_hydration/code.html">SHOP</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="../about_prime_our_story/code.html">ABOUT PRIME</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="#">WHERE TO BUY</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold uppercase" href="#">VERIFY YOUR PRIME</a>
+</nav>
+<!-- Brand Logo -->
+<a class="absolute left-1/2 transform -translate-x-1/2 font-display-lg text-display-lg tracking-tighter text-primary dark:text-primary-fixed" href="../prime_hydration_official_site/code.html">PRIME</a>
+<!-- Right Actions -->
+<div class="flex items-center gap-gutter">
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" aria-label="Search">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="profile-toggle-btn text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" aria-label="Profile">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed" aria-label="Cart">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<a class="bg-primary text-on-primary px-6 py-3 font-label-bold text-label-bold uppercase hover:bg-primary-container transition-colors duration-100" href="#">BUY PRIME</a>
+</div>
+</div>
+<!-- Mobile Header (Simplified) -->
+<div class="flex justify-between items-center w-full px-margin-mobile h-16 md:hidden">
+<button class="text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="font-display-lg text-headline-lg-mobile tracking-tighter text-primary" href="../prime_hydration_official_site/code.html">PRIME</a>
+<button class="text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<!-- Product Details Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-section-gap items-center mb-section-gap">
+<!-- Left: Product Image -->
+<div class="w-full flex justify-center items-center bg-surface-container-low rounded-lg p-stack-lg aspect-square lg:aspect-auto h-full min-h-[500px] relative">
+<img alt="Ice Pop Bottle" class="w-full h-full object-contain drop-shadow-2xl z-10" data-alt="A pristine, high-resolution product shot of a brightly colored sports hydration bottle with a red, white, and blue label, positioned dead center against a stark, high-key white background. The lighting is crisp and studio-quality, creating sharp, athletic highlights on the plastic surface and conveying a premium, high-energy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2B1CUrtZ1ztOnAzJrBLyDGz3ZtOS7jxu0dHlZ02bd5fhfBTeWeRbe1X76jquZ6RWEebHfsQ9PcsDGRsnjbNqdFzeRytaHv2znq5C6BzGBHR2B-RxyUTlhyGJCwJqNDIW6DK6JJEawfqem-PMP_mSO0IOLkUFIEu9wsbgHBe1x5NqSYuavjedi6XK5ttx30KD5mxnJ8dDg51wKcAtl6mSfVGMgg8QoPEK7yG1Soyd247a0gJOq1JHVSdCgNb-1TqbzUMhZQ-nNhu4M"/>
+<!-- Decorative background typography elements -->
+<div class="absolute inset-0 flex items-center justify-center overflow-hidden z-0 opacity-5 pointer-events-none">
+<span class="font-display-xl text-[200px] leading-none text-primary whitespace-nowrap -rotate-12">ICE POP</span>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="flex flex-col gap-stack-lg">
+<!-- Breadcrumbs -->
+<nav class="flex gap-2 font-label-bold text-label-bold text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary" href="#">SHOP</a>
+<span>/</span>
+<a class="hover:text-primary" href="#">HYDRATION</a>
+<span>/</span>
+<span class="text-primary">ICE POP</span>
+</nav>
+<!-- Title & Price -->
+<div class="flex flex-col gap-stack-sm">
+<h1 class="font-display-xl text-display-xl md:text-[100px] leading-none tracking-tighter uppercase text-primary">ICE POP</h1>
+<p class="font-display-lg text-headline-lg text-secondary">$29.99 <span class="font-body-lg text-body-lg text-on-surface-variant lowercase tracking-normal">/ 12 PACK</span></p>
+</div>
+<!-- Badges -->
+<div class="flex gap-stack-sm flex-wrap">
+<span class="bg-primary text-on-primary font-label-bold text-label-bold uppercase px-4 py-2 rounded-sm tracking-wider">HYDRATION</span>
+<span class="bg-secondary text-on-primary font-label-bold text-label-bold uppercase px-4 py-2 rounded-sm tracking-wider">NO ADDED SUGAR</span>
+</div>
+<!-- Description -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    The classic summer flavor combination of cherry, lime, and blue raspberry. Formulated to help you refresh, replenish, and refuel with functional ingredients that leave you feeling your best.
+                </p>
+<!-- Nutritional Highlights Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-stack-md py-stack-lg border-y-2 border-primary">
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg-mobile text-primary">10%</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">COCONUT WATER</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg-mobile text-primary">250mg</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">BCAAS</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg-mobile text-primary">834mg</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">ELECTROLYTES</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg-mobile text-primary">B</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">VITAMINS</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg-mobile text-primary">ANTIOX.</span>
+<span class="font-label-bold text-label-bold text-on-surface-variant uppercase">ANTIOXIDANTS</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col md:flex-row gap-stack-md pt-stack-sm">
+<!-- Quantity Selector -->
+<div class="flex items-center border-2 border-primary w-full md:w-auto h-16">
+<button aria-label="Decrease quantity" class="w-16 h-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">remove</span>
+</button>
+<input aria-label="Quantity" class="w-16 h-full border-none text-center font-title-md text-title-md text-primary bg-transparent focus:ring-0 p-0" min="1" type="number" value="1"/>
+<button aria-label="Increase quantity" class="w-16 h-full flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-primary">add</span>
+</button>
+</div>
+<!-- Add to Cart Button -->
+<button class="flex-grow bg-primary text-on-primary font-title-md text-title-md uppercase h-16 hover:bg-inverse-surface hover:text-primary-fixed transition-colors duration-100 flex justify-center items-center gap-2">
+<span>ADD TO CART</span>
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+<!-- Secondary Actions -->
+<div class="flex flex-col gap-stack-sm pt-stack-sm">
+<button class="w-full border border-primary text-primary font-label-bold text-label-bold uppercase py-4 hover:bg-primary hover:text-on-primary transition-colors duration-100">
+                        SUBSCRIBE &amp; SAVE 10%
+                    </button>
+</div>
+</div>
+</section>
+<!-- Customer Reviews Section -->
+<section class="border-t-2 border-primary pt-section-gap mb-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-md">
+<div>
+<h2 class="font-display-lg text-headline-lg md:text-display-lg tracking-tighter uppercase text-primary">REVIEWS</h2>
+<div class="flex items-center gap-2 mt-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star</span>
+<span class="material-symbols-outlined filled">star_half</span>
+</div>
+<span class="font-label-bold text-label-bold uppercase tracking-wider text-on-surface-variant">4.8 / 5.0 (1,284 REVIEWS)</span>
+</div>
+</div>
+<button class="border-2 border-primary px-8 py-3 font-label-bold text-label-bold uppercase hover:bg-primary hover:text-on-primary transition-colors duration-100">WRITE A REVIEW</button>
+</div>
+<!-- Bento Grid for Reviews -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Review Card 1 -->
+<div class="bg-surface-container p-stack-lg border border-outline-variant flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div class="flex text-primary text-sm">
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+</div>
+<span class="font-label-bold text-xs text-on-surface-variant uppercase">2 DAYS AGO</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary uppercase">Best Flavor Yet</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">This tastes exactly like the ice pops I had as a kid, but without all the junk. Perfect for post-workout recovery or just a hot day.</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wider mt-auto pt-stack-sm border-t border-outline-variant text-primary">— JAKE T.</p>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-primary text-on-primary p-stack-lg flex flex-col gap-stack-md lg:col-span-2">
+<div class="flex justify-between items-start">
+<div class="flex text-on-primary text-sm">
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+</div>
+<span class="font-label-bold text-xs text-inverse-primary uppercase">1 WEEK AGO</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile uppercase">Absolute Game Changer</h3>
+<p class="font-body-lg text-body-lg text-inverse-on-surface text-xl">I've tried every hydration drink on the market and nothing comes close to this. The flavor is intense but not overpowering, and the ingredient profile is exactly what I need for long training sessions. Highly recommend stocking up!</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wider mt-auto pt-stack-sm border-t border-inverse-primary/30 text-inverse-primary">— SARAH M. (VERIFIED BUYER)</p>
+</div>
+<!-- Review Card 3 -->
+<div class="bg-surface-container p-stack-lg border border-outline-variant flex flex-col gap-stack-md">
+<div class="flex justify-between items-start">
+<div class="flex text-primary text-sm">
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined filled text-[18px]">star</span>
+<span class="material-symbols-outlined text-[18px]">star</span>
+</div>
+<span class="font-label-bold text-xs text-on-surface-variant uppercase">3 WEEKS AGO</span>
+</div>
+<h3 class="font-title-md text-title-md text-primary uppercase">Great Taste</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Really solid flavor. A bit sweet for my personal preference if I drink it too fast, but overall a great product.</p>
+<p class="font-label-bold text-label-bold uppercase tracking-wider mt-auto pt-stack-sm border-t border-outline-variant text-primary">— MARCUS D.</p>
+</div>
+</div>
+<div class="mt-stack-lg flex justify-center">
+<button class="font-label-bold text-label-bold uppercase text-primary border-b-2 border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors">LOAD MORE REVIEWS</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-primary dark:border-primary-fixed w-full mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+<!-- Brand/Logo Area -->
+<div class="md:col-span-4 flex flex-col gap-stack-md">
+<a class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tighter" href="../prime_hydration_official_site/code.html">PRIME</a>
+<p class="font-label-bold text-label-bold text-on-surface-variant dark:text-outline-variant">© 2024 PRIME HYDRATION, LLC. ALL RIGHTS RESERVED.</p>
+</div>
+<!-- Links Area -->
+<div class="md:col-span-8 flex flex-wrap gap-x-gutter gap-y-stack-md justify-start md:justify-end items-start pt-4">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 transition-all" href="#">PRIVACY POLICY</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 transition-all" href="#">TERMS OF SERVICE</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 transition-all" href="#">CONTACT US</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary font-bold hover:underline decoration-2 underline-offset-4 transition-all" href="#">NEWSLETTER</a>
+</div>
+</div>
+</footer>
+<script src="../cart.js?v=1.0.1"></script>
+</body></html>
