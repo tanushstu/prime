@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>PRIME - HYDRATION</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#001e2d",
+                        "secondary-fixed-dim": "#ffb3af",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#eeeeee",
+                        "surface-variant": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#cfc4c5",
+                        "inverse-primary": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-secondary-fixed": "#410005",
+                        "tertiary-fixed": "#c6e7ff",
+                        "on-primary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-primary-container": "#848484",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#82cfff",
+                        "on-surface": "#1a1c1c",
+                        "primary": "#000000",
+                        "surface-container-high": "#e8e8e8",
+                        "error-container": "#ffdad6",
+                        "outline": "#7e7576",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-container": "#008dc2",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1b1b1b",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#ffdad7",
+                        "surface": "#f9f9f9",
+                        "on-background": "#1a1c1c",
+                        "secondary": "#bb0022",
+                        "on-secondary-fixed-variant": "#930018",
+                        "background": "#f9f9f9",
+                        "on-surface-variant": "#4c4546",
+                        "secondary-container": "#e9002d",
+                        "tertiary-container": "#001e2d",
+                        "surface-container-low": "#f3f3f4",
+                        "surface-dim": "#dadada",
+                        "tertiary": "#000000",
+                        "on-tertiary-fixed-variant": "#004c6b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Anton"],
+                        "label-bold": ["Archivo Narrow"],
+                        "body-lg": ["Archivo Narrow"],
+                        "headline-lg": ["Anton"],
+                        "title-md": ["Archivo Narrow"],
+                        "headline-lg-mobile": ["Anton"],
+                        "display-lg": ["Anton"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["120px", { "lineHeight": "110px", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "52px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "36px", "fontWeight": "400" }],
+                        "display-lg": ["80px", { "lineHeight": "80px", "letterSpacing": "0.02em", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .hero-text {
+            font-size: clamp(80px, 15vw, 240px);
+            line-height: 1;
+            letter-spacing: 0.15em;
+            transform: scaleX(1.1);
+        }
+    </style>
+</head>
+
+<body class="font-body-lg text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <header
+        class="bg-surface dark:bg-surface w-full z-50 sticky top-0 border-b border-primary dark:border-primary-fixed">
+        <div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-[1440px] mx-auto">
+            <!-- Left Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-6">
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold"
+                    href="../shop_all_prime_hydration/code.html">SHOP</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold"
+                    href="../about_prime_our_story/code.html">ABOUT PRIME</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold"
+                    href="#">WHERE TO BUY</a>
+                <a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed font-label-bold text-label-bold"
+                    href="#">VERIFY YOUR PRIME</a>
+            </nav>
+            <!-- Brand Logo -->
+            <div class="absolute left-1/2 -translate-x-1/2">
+                <a class="font-display-lg text-display-lg tracking-tighter text-primary dark:text-primary-fixed"
+                    href="../prime_hydration_official_site/code.html">PRIME</a>
+            </div>
+            <!-- Right Actions -->
+            <div class="flex items-center gap-6">
+                <div class="hidden lg:flex gap-4 font-label-bold text-label-bold border border-primary px-2 py-1">
+                    <button class="hover:underline">US</button>
+                    <span>|</span>
+                    <button class="text-outline">UK</button>
+                </div>
+                <button class="text-primary hover:text-primary-fixed transition-colors duration-100"
+                    aria-label="Search">
+                    <span class="material-symbols-outlined" data-icon="search">search</span>
+                </button>
+                <button class="profile-toggle-btn text-primary hover:text-primary-fixed transition-colors duration-100"
+                    aria-label="Profile">
+                    <span class="material-symbols-outlined" data-icon="person">person</span>
+                </button>
+                <button class="text-primary hover:text-primary-fixed transition-colors duration-100" aria-label="Cart">
+                    <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                </button>
+                <button
+                    class="hidden lg:block bg-primary text-on-primary font-label-bold text-label-bold px-8 py-3 hover:bg-surface-tint transition-colors duration-100">BUY
+                    PRIME</button>
+                <button class="lg:hidden text-primary" aria-label="Menu">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="w-full max-w-[1440px] mx-auto pt-section-gap pb-section-gap relative">
+        <!-- Hero Section -->
+        <section class="text-center px-margin-mobile md:px-margin-desktop mb-24 relative z-0">
+            <h1 class="font-display-xl hero-text font-black text-primary mb-[-100px] z-10 relative pointer-events-none">
+                HYDRATION</h1>
+        </section>
+        <!-- Product Grid -->
+        <section class="px-margin-mobile md:px-margin-desktop relative z-20">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter text-center">
+                <!-- Product 1 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-end bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Ice Pop"
+                            class="h-[110%] w-auto object-cover transform translate-y-4 group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A studio shot of a tall, modern hydration drink bottle with a striking red, white, and blue geometric label design. The bottle stands upright against a pure white background under bright, high-key studio lighting. The athletic aesthetic is emphasized by the crisp reflections on the bottle's plastic surface and the bold typography on the label."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrEXBGkDEBmdXq8UK6477VcU0e2CS2GNFiptPzL9Kq4Gi-GEQV3MNwo1kz88vxc3DX5byYgfhixcLqmzE6U5Ekkpy5DyfZEw_mGoE34xnhP7vH3wnfN_Oggw5-v0bUHJRLZCJQKsMGWFA6KvpZmnIyrhQSL8stLAS2t5tUTlWmGRAof1MrvVMeK3Rnnska715A54HUogs-Of1C9ajZQr3J8bVoYZP54FgooG8F86f3sJHCL-K6SoDZ684vx2p98zOzuWhOzzfLQmq8" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase">
+                        ICE POP</h3>
+                    <a href="../prime_hydration_ice_pop/code.html"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+                <!-- Product 2 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-end bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Ice Pop (Zero)"
+                            class="h-[110%] w-auto object-cover transform translate-y-4 group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A sleek, black and silver hydration bottle styled in a premium, high-contrast studio setting. The bottle, labeled 'Zero', is positioned vertically on a clean white surface. High-key lighting highlights the condensation on the bottle, reinforcing a refreshing, athletic vibe consistent with a modern sports drink brand."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuAn8Eq0Ao7KGefMSJ3deKX0MafjFj-fCPaCS92uDEUHLUjbzIspQpt3YTL_YKNhVuJ3j3oiRJqK3cyv_f4UZNl2RcDIqxBeturZHkWFI2G7gsxZOfrAtyDydhpTw8UvCw0bs48yHi6ZhRk1HJogcvtp4-STcLJrNznycFDa1masmUZjGCU1wN0_AyOCmmruHwLXCywt0agbCQQ1VHt33xEMPrKuS49DCTQnNqqgQ_X9uOT0frUUk15MtZA0t3vHNyaAHReHzNNogr" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase">
+                        ICE POP (ZERO)</h3>
+                    <a href="#"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+                <!-- Product 3 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-center bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Variety Pack"
+                            class="w-[90%] h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A wide horizontal shot of a 15-pack case of sports hydration drinks wrapped in clear plastic. The vibrant multi-colored bottles are visible through the packaging, sitting on a pristine white surface. The bright, high-contrast lighting creates an energetic and premium retail display aesthetic."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD3FYYNGd4TQB8SYPmA35EImbis_EWe9GM81fbEL3SI6nPw7xSVOJNNX1cxUTO7bRUDJzg7vrSL1MWT4qYGmaXu4nzrPNPqzvAvYtThaC8zSb-TvQdQBgQxYXGTYWqP0ZwL84KK9mQ55XhMPxlM9XMyIoI2gmjxZAghI7aNC7rZZeEx8hwrJMpVb7omV30czEAKMbN0xwrkjvCisIYP1l55zJnaCt5URsLtKZ3f7PP_9Do4bipJjYeUljkFLmki0LmVCBuUIA-h29z" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase text-center">
+                        ICE POP, CHERRY FREEZE, BERRY FREEZE</h3>
+                    <a href="#"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+                <!-- Product 4 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-end bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Strawberry Swirl"
+                            class="h-[110%] w-auto object-cover transform translate-y-4 group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A dynamic studio image of a sports drink bottle featuring a swirling pink and white design. The bottle stands vertically against a stark white backdrop, illuminated by crisp, cool lighting. The aesthetic is clean and modern, emphasizing the intense, vibrant colors of the packaging indicative of a high-energy athletic lifestyle."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu2RIV-9Sdl6ewcU1kaWuGXlZGzBvVN4PEcn773hBMnlOCotNkq5xbh7Ai1tOoWm1_VoDqYGseBB0tkoEeG2NR4HQD5DJYEwMzD1ectySk_5Z6HP-231ik3ThNSz0uJJOtrxsr_0T8bG9yR92ikPFk5jJssPKi26ztTTNJBVvqKYe1zZoWSqmxSc7mY5KN9vyOnzfnuacb0j-DVQobea_GxZTBcv-cbp8YcUqECiadhbPbbg_QeqrQKfwCSmACP584VtLZe0kUScf6" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase">
+                        STRAWBERRY SWIRL</h3>
+                    <a href="#"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+                <!-- Product 5 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-end bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Frostbite Fusion"
+                            class="h-[110%] w-auto object-cover transform translate-y-4 group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A vivid, icy-blue colored hydration bottle presented in a high-end minimalist setting. The bottle features sharp, aggressive branding elements in black and white. Photographed against a plain white background with bright, even lighting, conveying a sense of extreme freshness and peak athletic performance."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuByLqH9L1nDqvxGC-11gfZDi-tLY3wl5RS0hR5M0OXLG9gL4gOGw37fjrPj5hb2SEBNd-JdwPEodHYjO7QdbZiclgNjEuo8gTqZpZBinXQukhqwUlmksfecrTKPv20oIWNm7Z7b5miZK3EVIUcDWSWsO95rOCBmltlX_DQjs-7lnuwyWK-VnKIQhV0mylvclXgAqShlFDxCC9eV3HTDpiN7jxQPfIMbl0ABGbXzuUpXn3jwRwq8I6MB13es9uhvtnrjR3wpM8--aXkX" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase">
+                        FROSTBITE FUSION</h3>
+                    <a href="#"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+                <!-- Product 6 -->
+                <div class="flex flex-col items-center group">
+                    <div
+                        class="h-64 md:h-80 w-full mb-stack-md flex justify-center items-center bg-surface-bright rounded-lg overflow-hidden border border-transparent group-hover:border-primary transition-all duration-300">
+                        <img alt="Orange Swirl Pack"
+                            class="w-[90%] h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="A multipack of sports drinks wrapped in clear plastic, featuring bottles with orange and white swirl designs. The product rests on a clean, bright white surface. The high-contrast, professional studio lighting emphasizes the bold, premium branding of the packaging, fitting for a modern hydration brand."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE0yhJz8zFMeWaXnHSmxwyXKWLfosL8Gwx1YiQLpT6u4soGf_CykU8xpFLoeFs_7jXajel0mUk7HinO8rhdJYTbI2x58n05QEyqvvBizOt6K1MDRQIHEf8HKyB8f2dyNGQQscyFUU_V2EFr8Li41etN-wgcguECNycKdZDB1izn1QzZ3z0h6-42sRWiJMGHxPTF8h72MQbg7eemfhF2gf0Z_Sj-I1ajRFo33vZxaqHUcVmZmmvAd0FAljQlf9INh0G9QrjCAnoZSSy" />
+                    </div>
+                    <h3
+                        class="font-label-bold text-label-bold mb-stack-sm min-h-[40px] flex items-center justify-center uppercase text-center">
+                        ORANGE SWIRL, CITRUS TIDE, ICE POP</h3>
+                    <a href="#"
+                        class="border border-primary text-primary px-6 py-2 font-label-bold text-label-bold w-full max-w-[200px] hover:bg-primary hover:text-on-primary transition-colors duration-100 uppercase inline-block text-center sharp-border">LEARN
+                        MORE</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Floating Action / Popup -->
+    <div class="fixed bottom-margin-desktop right-margin-desktop z-50">
+        <div
+            class="bg-surface border border-primary p-4 shadow-2xl flex items-center gap-4 cursor-pointer hover:bg-surface-bright transition-colors">
+            <span class="font-label-bold text-label-bold uppercase text-primary">DON't MISS OUT</span>
+            <button class="text-primary hover:text-surface-tint">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+            </button>
+        </div>
+    </div>
+    <!-- Accessibility Widget Mockup -->
+    <div class="fixed bottom-margin-mobile left-margin-mobile z-50">
+        <button
+            class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center hover:scale-105 transition-transform">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">accessibility_new</span>
+        </button>
+    </div>
+    <!-- Footer -->
+    <footer
+        class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-primary dark:border-primary-fixed">
+        <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop py-section-gap max-w-[1440px] mx-auto">
+            <div class="md:col-span-12 flex flex-col items-center gap-stack-lg">
+                <div class="font-display-lg text-display-lg text-primary dark:text-primary-fixed">PRIME</div>
+                <div class="flex gap-6 font-label-bold text-label-bold uppercase">
+                    <a class="text-on-surface-variant hover:underline decoration-2 underline-offset-4" href="#">PRIVACY
+                        POLICY</a>
+                    <a class="text-on-surface-variant hover:underline decoration-2 underline-offset-4" href="#">TERMS OF
+                        SERVICE</a>
+                    <a class="text-on-surface-variant hover:underline decoration-2 underline-offset-4" href="#">CONTACT
+                        US</a>
+                    <a class="text-on-surface-variant hover:underline decoration-2 underline-offset-4"
+                        href="#">NEWSLETTER</a>
+                </div>
+                <div class="text-on-surface-variant font-label-bold text-label-bold mt-stack-md">
+                    © 2024 PRIME HYDRATION, LLC. ALL RIGHTS RESERVED.
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../cart.js?v=1.0.1"></script>
+</body>
+
+</html>

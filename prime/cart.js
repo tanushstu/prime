@@ -1,7 +1,7 @@
 // Shared JavaScript for Prime Hydration multi-page site
 // Handles Cart, Mobile Nav, Search, Accessibility, and General Interactivity
 
-(function() {
+(function () {
     // ----------------------------------------------------
     // 1. Inject Stylesheets & Dynamic Styles
     // ----------------------------------------------------
@@ -267,10 +267,10 @@
                 return;
             }
 
-            const baseDir = window.location.pathname.includes('/stitch_custom_web_application/') 
-                ? '/stitch_custom_web_application/' 
+            const baseDir = window.location.pathname.includes('/prime/')
+                ? '/prime/'
                 : '/';
-            
+
             const sbScript = document.createElement('script');
             sbScript.src = baseDir + 'node_modules/@supabase/supabase-js/dist/umd/supabase.js';
             sbScript.onload = () => {
@@ -312,7 +312,7 @@
         try {
             const key = getCartStorageKey();
             const storedUser = localStorage.getItem('prime_user');
-            
+
             let loadedCart = [];
             let loadedFromDb = false;
 
@@ -350,7 +350,7 @@
             cart = [];
         }
         updateCartBadges();
-        
+
         // If the cart drawer is active, re-render the items list
         const drawer = document.getElementById('cart-drawer');
         if (drawer && drawer.classList.contains('active')) {
@@ -517,8 +517,8 @@
             if (iconSpan && (iconSpan.textContent.trim() === 'shopping_cart' || iconSpan.getAttribute('data-icon') === 'shopping_cart')) {
                 const parent = el.parentElement;
                 if (parent) {
-                    const hasProfile = parent.querySelector('.profile-toggle-btn') || 
-                                       Array.from(parent.querySelectorAll('.material-symbols-outlined')).some(span => span.textContent.trim() === 'person' || span.getAttribute('data-icon') === 'person');
+                    const hasProfile = parent.querySelector('.profile-toggle-btn') ||
+                        Array.from(parent.querySelectorAll('.material-symbols-outlined')).some(span => span.textContent.trim() === 'person' || span.getAttribute('data-icon') === 'person');
                     if (!hasProfile && !parent.querySelector('a[href*="/login"]') && !window.location.pathname.includes('/login/')) {
                         const profileBtn = document.createElement('button');
                         profileBtn.className = 'profile-toggle-btn text-primary hover:text-secondary p-1 flex items-center justify-center relative';
@@ -604,7 +604,7 @@
         body.insertAdjacentHTML('beforeend', accessPanelHtml);
 
         // Inject accessibility toggle floating button if not present
-        if (!document.querySelector('.material-symbols-outlined[style*="accessibility_new"]') && 
+        if (!document.querySelector('.material-symbols-outlined[style*="accessibility_new"]') &&
             !document.querySelector('button span[class*="accessibility_new"]') &&
             !document.getElementById('access-floating-btn')) {
             const floatingBtn = `
@@ -696,12 +696,12 @@
         // Profile close handlers
         document.getElementById('profile-close').addEventListener('click', closeProfileDrawer);
         document.getElementById('profile-backdrop').addEventListener('click', closeProfileDrawer);
-        
+
         // Profile toggle buttons click handler
         document.addEventListener('click', (e) => {
-            const toggleBtn = e.target.closest('.profile-toggle-btn') || 
-                              e.target.closest('header button .material-symbols-outlined[data-icon="person"]')?.closest('button') ||
-                              (e.target.closest('header button') && e.target.closest('header button').querySelector('.material-symbols-outlined')?.textContent.trim() === 'person');
+            const toggleBtn = e.target.closest('.profile-toggle-btn') ||
+                e.target.closest('header button .material-symbols-outlined[data-icon="person"]')?.closest('button') ||
+                (e.target.closest('header button') && e.target.closest('header button').querySelector('.material-symbols-outlined')?.textContent.trim() === 'person');
             if (toggleBtn) {
                 e.preventDefault();
                 handleProfileToggle();
@@ -719,10 +719,10 @@
 
         // Accessibility triggers
         const accessPanel = document.getElementById('accessibility-panel');
-        
+
         // Find floating button
-        const floatingAccessBtn = document.getElementById('access-floating-btn') || 
-            document.querySelector('.material-symbols-outlined[style*="accessibility_new"]')?.closest('button') || 
+        const floatingAccessBtn = document.getElementById('access-floating-btn') ||
+            document.querySelector('.material-symbols-outlined[style*="accessibility_new"]')?.closest('button') ||
             document.querySelector('button span[class*="accessibility_new"]')?.closest('button');
 
         if (floatingAccessBtn) {
@@ -847,7 +847,7 @@
     function renderCartItems() {
         const container = document.getElementById('cart-items-container');
         const subtotalEl = document.getElementById('cart-subtotal-val');
-        
+
         if (cart.length === 0) {
             container.innerHTML = `
                 <div class="flex flex-col items-center justify-center h-full text-center py-12">
@@ -924,12 +924,27 @@
             `;
         });
 
+        // Try to retrieve email from logged-in user context
+        let savedEmail = '';
+        try {
+            const storedUser = localStorage.getItem('prime_user');
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                if (user && user.email) {
+                    savedEmail = user.email;
+                }
+            }
+        } catch (e) {
+            console.error('Error reading email for checkout:', e);
+        }
+
         modalContent.innerHTML = `
             <div class="text-center flex flex-col items-center gap-4">
                 <span class="material-symbols-outlined text-[64px] text-secondary">check_circle</span>
                 <h2 class="font-headline-lg text-headline-lg-mobile text-black uppercase">CHECKOUT SUCCESS</h2>
                 <p class="text-on-surface-variant text-sm">Thank you for your order! Logan and KSI are packing your energy fuel right now.</p>
             </div>
+            
             <div class="border-y-2 border-black py-4 flex flex-col gap-2">
                 ${orderItemsHtml}
                 <div class="flex justify-between font-title-md text-black uppercase pt-2 border-t border-black/10">
@@ -937,16 +952,69 @@
                     <span>$${getCartTotal().toFixed(2)}</span>
                 </div>
             </div>
+
+            <!-- Email Capture Field -->
+            <div class="flex flex-col gap-1 text-left">
+                <label for="checkout-email" class="text-[10px] font-bold text-black uppercase">Email Address (for order receipt)</label>
+                <input type="email" id="checkout-email" placeholder="ENTER YOUR EMAIL ADDRESS" class="border-2 border-black h-10 text-black font-label-bold text-xs bg-transparent focus:ring-0 uppercase px-3 placeholder-black/30 sharp-border" required value="${savedEmail}" />
+            </div>
+
             <button id="checkout-confirm" class="w-full bg-black text-white hover:bg-secondary h-12 font-title-md text-sm uppercase transition-colors sharp-border">
-                AWESOME, DRINK UP!
+                CONFIRM & SEND RECEIPT
             </button>
         `;
         openInfoModal();
 
-        document.getElementById('checkout-confirm').addEventListener('click', () => {
-            clearCart();
-            closeInfoModal();
-            showToast("ORDER PLACED SUCCESSFULLY!");
+        const confirmBtn = document.getElementById('checkout-confirm');
+        confirmBtn.addEventListener('click', async () => {
+            const emailInput = document.getElementById('checkout-email');
+            const emailVal = emailInput ? emailInput.value.trim() : '';
+
+            // Simple email validation regex
+            if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                showToast("PLEASE ENTER A VALID EMAIL ADDRESS");
+                if (emailInput) emailInput.focus();
+                return;
+            }
+
+            // Disable button and indicate sending
+            confirmBtn.disabled = true;
+            confirmBtn.textContent = "SENDING ORDER...";
+            confirmBtn.style.opacity = "0.7";
+
+            try {
+                // Post cart details to our server
+                const response = await fetch('/api/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: emailVal,
+                        cart: cart,
+                        total: getCartTotal()
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    clearCart();
+                    closeInfoModal();
+                    showToast("ORDER PLACED! CONFIRMATION EMAIL SENT.");
+                } else {
+                    console.error("Confirmation email failed:", data.message);
+                    clearCart();
+                    closeInfoModal();
+                    // Inform user of order success but email warning
+                    showToast(`ORDER SUCCESS! (EMAIL WARNING: ${data.message})`);
+                }
+            } catch (err) {
+                console.error("Checkout email fetch error:", err);
+                clearCart();
+                closeInfoModal();
+                showToast("ORDER PLACED! (COULD NOT SEND RECEIPT)");
+            }
         });
     }
 
@@ -966,7 +1034,7 @@
 
     function renderSearchResults(query) {
         const resultsContainer = document.getElementById('search-results');
-        
+
         let filtered = mockProducts;
         if (query) {
             filtered = mockProducts.filter(p => p.name.toLowerCase().includes(query.toLowerCase()));
@@ -1001,7 +1069,7 @@
         resultsContainer.querySelectorAll('.search-card-item').forEach(card => {
             const prodId = card.getAttribute('data-id');
             const prodObj = mockProducts.find(p => p.id === prodId);
-            
+
             // Allow Add to Cart button to stop propagation
             card.querySelector('.search-add-to-cart').addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1315,7 +1383,7 @@
                 showToast("PLEASE ENTER A VALID EMAIL");
                 return;
             }
-            
+
             modalContent.innerHTML = `
                 <div class="text-center flex flex-col items-center gap-4 py-6">
                     <span class="material-symbols-outlined text-[64px] text-secondary">mark_email_read</span>
@@ -1337,7 +1405,7 @@
         const toast = document.getElementById('toast-notify');
         toast.textContent = message;
         toast.classList.add('active');
-        
+
         setTimeout(() => {
             toast.classList.remove('active');
         }, 3000);
@@ -1397,7 +1465,7 @@
     // ----------------------------------------------------
     function setupCountrySelector() {
         const selectors = document.querySelectorAll('header div.font-label-bold button, header div.font-label-bold a');
-        
+
         // Find US / UK buttons
         let usBtn, ukBtn;
         selectors.forEach(el => {
@@ -1460,12 +1528,12 @@
             products.forEach((prodEl, index) => {
                 const titleEl = prodEl.querySelector('h3');
                 const btnEl = prodEl.querySelector('button');
-                
+
                 if (titleEl && btnEl) {
                     const titleText = titleEl.textContent.trim().toUpperCase();
                     // Map index to mock product object
                     let mappedProduct = mockProducts[index] || mockProducts[0];
-                    
+
                     // "LEARN MORE" button hooks
                     btnEl.addEventListener('click', (e) => {
                         e.preventDefault();
@@ -1499,7 +1567,7 @@
         if (path.includes('shop_all_prime_hydration')) {
             // Hook up add to cart buttons in the grid
             const cards = document.querySelectorAll('main div.grid > div');
-            
+
             // Re-render filtering capabilities
             setupShopFilters(cards);
         }
@@ -1522,14 +1590,14 @@
             const priceEl = card.querySelector('p');
             const btnEl = card.querySelector('button');
             const imgEl = card.querySelector('img');
-            
+
             if (titleEl && priceEl && btnEl) {
                 const titleText = titleEl.textContent.trim();
                 const priceText = priceEl.textContent.trim();
                 // Parse price (e.g. "$29.99 / 12 Pack" -> 29.99)
                 const priceMatch = priceText.match(/\$?([0-9.]+)/);
                 const priceVal = priceMatch ? parseFloat(priceMatch[1]) : 29.99;
-                
+
                 // Determine mockProduct
                 let prodObj = mockProducts.find(p => p.name.toUpperCase() === titleText.toUpperCase());
                 if (!prodObj) {
@@ -1601,7 +1669,7 @@
             sortSelect.addEventListener('change', (e) => {
                 const sortType = e.target.value;
                 let sortedList = [...productsList];
-                
+
                 if (sortType.includes('Low to High')) {
                     sortedList.sort((a, b) => a.data.price - b.data.price);
                 } else if (sortType.includes('High to Low')) {
@@ -1714,7 +1782,7 @@
             // Setup star rating selection logic
             let currentRating = 5;
             const stars = document.getElementById('review-rating-select').querySelectorAll('.select-star');
-            
+
             const updateStarsUI = (val) => {
                 stars.forEach(s => {
                     const rating = parseInt(s.getAttribute('data-rating'));

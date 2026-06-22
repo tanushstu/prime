@@ -5,8 +5,8 @@ let supabaseInstance = null;
  * Loads environment variables dynamically from the .env file.
  */
 async function loadEnv() {
-    const baseDir = window.location.pathname.includes('/stitch_custom_web_application/') 
-        ? '/stitch_custom_web_application/' 
+    const baseDir = window.location.pathname.includes('/prime/')
+        ? '/prime/'
         : '/';
 
     const possiblePaths = [
