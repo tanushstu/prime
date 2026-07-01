@@ -1253,7 +1253,11 @@
             try {
                 const client = await window.getSupabaseClient();
                 if (client) {
-                    await client.auth.signOut();
+                    // Race against a timeout so a stalled network call can't block logout
+                    await Promise.race([
+                        client.auth.signOut(),
+                        new Promise(resolve => setTimeout(resolve, 3000))
+                    ]);
                 }
             } catch (err) {
                 console.warn('Supabase backend signOut failed:', err);
@@ -1263,7 +1267,7 @@
         closeProfileDrawer();
         showToast("LOGGED OUT SUCCESSFULLY!");
         setTimeout(() => {
-            window.location.reload();
+            window.location.href = '../login/code.html';
         }, 1000);
     }
 
