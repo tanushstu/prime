@@ -2,61 +2,15 @@
 let supabaseInstance = null;
 
 /**
- * Loads environment variables dynamically from the .env file.
- */
-async function loadEnv() {
-    const baseDir = window.location.pathname.includes('/prime/')
-        ? '/prime/'
-        : '/';
-
-    const possiblePaths = [
-        baseDir + '.env',
-        '../.env',
-        './.env',
-        '../../.env'
-    ];
-    let envText = '';
-    for (const path of possiblePaths) {
-        try {
-            const res = await fetch(path);
-            if (res.ok) {
-                envText = await res.text();
-                break;
-            }
-        } catch (e) {
-            // Silence path errors and proceed to the next attempt
-        }
-    }
-
-    const env = {};
-    if (!envText) {
-        console.warn('Could not load .env file dynamically. Using fallback environment window variables if present.');
-        return env;
-    }
-
-    envText.split('\n').forEach(line => {
-        const trimmed = line.trim();
-        if (!trimmed || trimmed.startsWith('#')) return;
-        const eqIdx = trimmed.indexOf('=');
-        if (eqIdx > 0) {
-            const key = trimmed.slice(0, eqIdx).trim();
-            const val = trimmed.slice(eqIdx + 1).trim();
-            env[key] = val;
-        }
-    });
-
-    return env;
-}
-
-/**
  * Initializes and returns the Supabase client instance.
+ * Reads config from window.SUPABASE_URL / window.SUPABASE_ANON_KEY,
+ * which config.js sets before this script runs.
  */
 async function getSupabaseClient() {
     if (supabaseInstance) return supabaseInstance;
 
-    const env = await loadEnv();
-    let url = env.SUPABASE_URL || window.SUPABASE_URL;
-    const anonKey = env.SUPABASE_ANON_KEY || window.SUPABASE_ANON_KEY;
+    let url = window.SUPABASE_URL;
+    const anonKey = window.SUPABASE_ANON_KEY;
 
     if (!url || !anonKey || url.includes('YOUR_SUPABASE_URL_HERE') || anonKey.includes('YOUR_SUPABASE_ANON_KEY_HERE')) {
         console.error('Supabase credentials (SUPABASE_URL, SUPABASE_ANON_KEY) are missing or set to placeholder.');
