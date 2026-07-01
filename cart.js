@@ -272,14 +272,19 @@
                 : '/';
 
             const sbScript = document.createElement('script');
-            sbScript.src = baseDir + 'node_modules/@supabase/supabase-js/dist/umd/supabase.js';
+            sbScript.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js';
             sbScript.onload = () => {
-                const clientScript = document.createElement('script');
-                clientScript.src = baseDir + 'supabaseClient.js?v=1.0.1';
-                clientScript.onload = () => {
-                    resolve();
+                const configScript = document.createElement('script');
+                configScript.src = baseDir + 'config.js?v=1.0.1';
+                configScript.onload = () => {
+                    const clientScript = document.createElement('script');
+                    clientScript.src = baseDir + 'supabaseClient.js?v=1.0.1';
+                    clientScript.onload = () => {
+                        resolve();
+                    };
+                    document.head.appendChild(clientScript);
                 };
-                document.head.appendChild(clientScript);
+                document.head.appendChild(configScript);
             };
             sbScript.onerror = () => {
                 console.warn('Dynamic loading of Supabase library skipped or offline.');
