@@ -370,6 +370,8 @@
     }
 
     async function addToCart(product, quantity = 1) {
+        if (!requireLoginOrPrompt()) return;
+
         const existing = cart.find(item => item.id === product.id);
         if (existing) {
             existing.quantity += quantity;
@@ -641,6 +643,14 @@
     // 5. Setup Action Handlers & Event Listeners
     // ----------------------------------------------------
     function setupGlobalEventListeners() {
+        // "Learn More" product links require login before viewing/purchasing
+        document.addEventListener('click', (e) => {
+            const learnMoreBtn = e.target.closest('.product-learn-more');
+            if (!learnMoreBtn) return;
+            e.preventDefault();
+            requireLoginOrPrompt();
+        });
+
         // Cart Toggle buttons (Header cart icons)
         document.querySelectorAll('header button, header a').forEach(el => {
             const iconSpan = el.querySelector('.material-symbols-outlined');
@@ -1142,6 +1152,16 @@
         }
     }
 
+    // Gate used by "Add to Cart" and "Learn More" — guests get a toast + redirect to login.
+    function requireLoginOrPrompt() {
+        if (localStorage.getItem('prime_user')) return true;
+        showToast('LOGIN TO PURCHASE ITEMS', 2000);
+        setTimeout(() => {
+            window.location.href = '../login/code.html';
+        }, 2000);
+        return false;
+    }
+
     function renderProfileInfo() {
         const container = document.getElementById('profile-info-container');
         if (!container) return;
@@ -1401,14 +1421,14 @@
     // ----------------------------------------------------
     // 11. Toast Notifications Utility
     // ----------------------------------------------------
-    function showToast(message) {
+    function showToast(message, duration = 3000) {
         const toast = document.getElementById('toast-notify');
         toast.textContent = message;
         toast.classList.add('active');
 
         setTimeout(() => {
             toast.classList.remove('active');
-        }, 3000);
+        }, duration);
     }
 
     // ----------------------------------------------------
